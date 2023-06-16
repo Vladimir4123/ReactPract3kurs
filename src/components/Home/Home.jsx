@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const headerStyle = {
@@ -7,10 +8,28 @@ function Header() {
     textAlign: "center",
     color: "white",
   };
-
+  const linkStyle = {
+    fontStyle: "sans-sefif",
+    marginRight: "20px",
+    color: "white",
+    textDecoration: "none",
+  };
+  const specialLinkStyle = {
+    fontStyle: "sans-sefif",
+    color: "white",
+    fontWeight: "bold",
+    border: "none",
+    marginRight: "10px",
+  };
   return (
     <header style={headerStyle}>
       <h1>BVN</h1>
+      <Link to="/" style={specialLinkStyle}>
+        Home
+      </Link>
+      <Link to="/state" style={linkStyle}>
+        State
+      </Link>
     </header>
   );
 }
