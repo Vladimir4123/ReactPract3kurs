@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../store/productsSlice";
 
 function Header() {
   const headerStyle = {
@@ -50,20 +52,12 @@ function Footer() {
 }
 
 function Home() {
-  const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    await fetch("https://dummyjson.com/products")
-      .then((resp) => resp.json())
-      .then((resp) => {
-        console.log(resp);
-        setProducts(resp.products);
-      });
-  };
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    dispatch(fetchProducts);
+  }, [dispatch]);
 
   const productContainerStyle = {
     display: "flex",
