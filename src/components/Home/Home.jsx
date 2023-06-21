@@ -71,7 +71,6 @@ function Home() {
     width: "200px",
     margin: "10px",
     border: "2px solid",
-    borderRadius: "5px",
     padding: "10px",
     position: "relative",
   };
