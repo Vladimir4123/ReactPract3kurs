@@ -1,13 +1,82 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  position: relative;
+}
+header .shop-kart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  background-color: grey;
+}
+link .linkStyle {
+  font-family: "sans-sefif";
+  margin-right: "20px";
+  color: "white";
+  text-decoration: none;
+}
+link .linkStyle.active {
+  font-style: "sans-sefif";
+  margin-right: "10px";
+  color: "red";
+  font-weight: "bold";
+  border: "none";
+}
+header .headerStyle {
+  background-color: "grey";
+  padding: "20px";
+  text-align: "center";
+  color: "white";
+}
+footer .footerStyle {
+  background-color: "grey";
+  padding: "10px";
+  text-align: "center";
+  color: "white";
+}
+div .stateStyle {
+  font-style: "sans-sefif";
+  font-size: "80px";
+  padding: "40px";
+  text-align: "center";
+  display: "flex";
+  justify-content: "space-between";
+}
+button .buttonStyle {
+  font-style: "sans-sefif";
+  font-size: "80px";
+  padding: "10px 20px";
+  border-radius: "5px";
+  border: "none";
+  cursor: "pointer";
+  background-color: "white";
+}
+div .productContainerStyle {
+  display: "flex";
+  flex-wrap: "wrap";
+  justify-content: "center";
+}
+div .productStyle {
+  width: "200px";
+  margin: "10px";
+}
+div .productTitleStyle {
+  font-weight: "bold";
+}
+div .productImageStyle {
+  width: "100%";
+  height: "auto";
 }

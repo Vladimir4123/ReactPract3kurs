@@ -30,10 +30,12 @@ function Header() {
       <Link to="/state" style={specialLinkStyle}>
         State
       </Link>
+      <Link to="/basket" style={linkStyle}>
+        Basket
+      </Link>
     </header>
   );
 }
-
 function Footer() {
   const footerStyle = {
     backgroundColor: "black",
@@ -50,15 +52,6 @@ function Footer() {
 }
 function State() {
   const [count, setCount] = useState(1);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
-
-  const decrementCount = () => {
-    setCount(count - 1);
-  };
-
   const stateStyle = {
     fontStyle: "sans-sefif",
     fontSize: "80px",
@@ -76,6 +69,13 @@ function State() {
     border: "none",
     cursor: "pointer",
     backgroundColor: "white",
+  };
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  const decrementCount = () => {
+    setCount(count - 1);
   };
 
   return (

@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchProducts } from "../store/productsSlice";
+import { addToBasket } from "../store/basketSlice";
 
 function Header() {
   const headerStyle = {
@@ -32,6 +33,9 @@ function Header() {
       <Link to="/state" style={linkStyle}>
         State
       </Link>
+      <Link to="/basket" style={linkStyle}>
+        Basket
+      </Link>
     </header>
   );
 }
@@ -50,33 +54,57 @@ function Footer() {
     </footer>
   );
 }
-
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-
   useEffect(() => {
-    dispatch(fetchProducts);
+    dispatch(fetchProducts());
   }, [dispatch]);
-
   const productContainerStyle = {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
   };
 
-  const productStyle = {
+  const productBasketStyle = {
+    backgroundColor: "white",
     width: "200px",
     margin: "10px",
+    border: "2px solid",
+    borderRadius: "5px",
+    padding: "10px",
+    position: "relative",
   };
 
   const productTitleStyle = {
     fontWeight: "bold",
+    marginBottom: "5px",
+  };
+
+  const productPriceStyle = {
+    marginBottom: "5px",
   };
 
   const productImageStyle = {
     width: "100%",
     height: "auto",
+    borderRadius: "5px",
+  };
+
+  const addToBasketButtonStyle = {
+    backgroundColor: "black",
+    color: "white",
+    border: "none",
+    padding: "5px 10px",
+    cursor: "pointer",
+    position: "absolute",
+    bottom: "10px",
+    left: "50%",
+    transform: "translateX(-50%)",
+  };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToBasket(product));
   };
 
   return (
@@ -84,14 +112,20 @@ function Home() {
       <Header />
       <div style={productContainerStyle}>
         {products.map((item) => (
-          <div key={item.id} style={productStyle}>
+          <div key={item.id} style={productBasketStyle}>
             <p style={productTitleStyle}>Товар: {item.title}</p>
-            <p>Цена: {item.price}</p>
+            <p style={productPriceStyle}>Цена: {item.price}$</p>
             <img
               src={item.thumbnail}
               alt={item.title}
               style={productImageStyle}
             />
+            <button
+              style={addToBasketButtonStyle}
+              onClick={() => handleAddToCart(item)}
+            >
+              Добавить в корзину
+            </button>
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.jsx";
 import State from "./components/Home/State.jsx";
 import { Provider } from "react-redux";
 import store from "./components/store/store.js";
+import Basket from "./components/Home/Basket.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/state" element={<State />} />
+            <Route path="/basket" element={<Basket />} />
           </Routes>
         </div>
       </Router>
