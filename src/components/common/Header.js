@@ -26,9 +26,8 @@ function Header() {
   };
   const specialLinkStyle = {
     fontStyle: "sans-sefif",
-    color: "white",
+    color: "red",
     fontWeight: "bold",
-    border: "none",
     marginRight: "10px",
   };
   const logoutButtonStyle = {
@@ -36,10 +35,9 @@ function Header() {
     fontWeight: "normal",
     marginLeft: "20px",
     padding: "8px 16px",
-    backgroundColor: "#FF7F50",
+    backgroundColor: "orange",
     color: "#fff",
     border: "none",
-    borderRadius: "5px",
     cursor: "pointer",
     transition: "background-color 0.3s ease-in-out",
   };
@@ -51,6 +49,9 @@ function Header() {
       </Link>
       <Link to="/state" style={linkStyle} activeStyle={specialLinkStyle}>
         State
+      </Link>
+      <Link to="/users" style={linkStyle} activeStyle={specialLinkStyle}>
+        Users
       </Link>
       {isAuthenticated ? (
         <>

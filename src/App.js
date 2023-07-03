@@ -10,6 +10,9 @@ import Footer from "./components/common/Footer.js";
 import ProductDetails from "./components/Home/ProductDetails.jsx";
 import Login from "./components/Home/Login.jsx";
 import Profile from "./components/Home/Profile.jsx";
+import Posts from "./components/Home/Posts.jsx";
+import Users from "./components/Home/Users.jsx";
+import UserDetails from "./components/Home/UserDetails.jsx";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/products/:productId" element={<ProductDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/users/:userId" element={<UserDetails />} />
           </Routes>
           <Footer />
         </div>
