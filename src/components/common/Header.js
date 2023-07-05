@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { logout } from "../store/authSlice";
 
 function Header() {
@@ -44,20 +44,27 @@ function Header() {
   return (
     <header style={headerStyle}>
       <h1>BVN</h1>
-      <Link to="/" style={linkStyle} activeStyle={specialLinkStyle}>
+      <NavLink to="/" style={linkStyle} activeStyle={specialLinkStyle}>
         Home
-      </Link>
-      <Link to="/state" style={linkStyle} activeStyle={specialLinkStyle}>
+      </NavLink>
+      <NavLink to="/state" style={linkStyle} activeStyle={specialLinkStyle}>
         State
-      </Link>
-      <Link to="/users" style={linkStyle} activeStyle={specialLinkStyle}>
+      </NavLink>
+      <NavLink to="/users" style={linkStyle} activeStyle={specialLinkStyle}>
         Users
-      </Link>
+      </NavLink>
       {isAuthenticated ? (
         <>
-          <Link to="/basket" style={linkStyle} activeStyle={specialLinkStyle}>
+          <NavLink to="/posts" style={linkStyle} activestyle={specialLinkStyle}>
+            Posts
+          </NavLink>
+          <NavLink
+            to="/basket"
+            style={linkStyle}
+            activeStyle={specialLinkStyle}
+          >
             Basket
-          </Link>
+          </NavLink>
           <NavLink
             to="/profile"
             style={linkStyle}

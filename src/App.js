@@ -13,6 +13,8 @@ import Profile from "./components/Home/Profile.jsx";
 import Posts from "./components/Home/Posts.jsx";
 import Users from "./components/Home/Users.jsx";
 import UserDetails from "./components/Home/UserDetails.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
             <Route path="/users/:userId" element={<UserDetails />} />
           </Routes>
           <Footer />
+          <ToastContainer />
         </div>
       </Router>
     </Provider>

@@ -98,7 +98,7 @@ function Posts() {
     },
     postAuthor: {
       fontSize: "14px",
-      color: "#888",
+      color: "white",
     },
   };
 
@@ -119,17 +119,7 @@ function Posts() {
           value={content}
           onChange={(e) => setContent(e.target.value)}
         ></textarea>
-        <button
-          style={style.addButton}
-          onClick={handleAddPost}
-          onMouseOver={(e) =>
-            (e.target.style.backgroundColor =
-              style.addButtonHover.backgroundColor)
-          }
-          onMouseOut={(e) =>
-            (e.target.style.backgroundColor = style.addButton.backgroundColor)
-          }
-        >
+        <button style={style.addButton} onClick={handleAddPost}>
           Add
         </button>
       </div>

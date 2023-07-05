@@ -51,21 +51,9 @@ function Profile() {
     color: "#333",
   };
 
-  const decorationStyle = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "linear-gradient(90deg, #bf7a38, #ffffff, #bf7a38)",
-    opacity: 0.1,
-    zIndex: -1,
-  };
-
   return (
     <div style={profileContainerStyle}>
       <div style={contentContainerStyle}>
-        <div style={decorationStyle}></div>
         <h1 style={headingStyle}>
           Профиль пользователя {user && user.username}
         </h1>
@@ -87,10 +75,6 @@ function Profile() {
               <span style={labelStyle}>ID пользователя:</span>
               {user.id}
             </p>
-            {/* <p>
-              <span style={labelStyle}>Token:</span>
-              {user.token}
-            </p> */}
           </>
         ) : (
           <p>Пользователь не найден.</p>
