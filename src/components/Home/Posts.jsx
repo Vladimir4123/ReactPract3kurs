@@ -68,14 +68,14 @@ function Posts() {
     postList: {
       listStyle: "none",
       padding: "0",
-      margin: "0",
+      marginBottom: "0",
     },
     postItem: {
       marginBottom: "20px",
       padding: "20px",
       border: "1px solid",
       borderRadius: "4px",
-      background: "grey",
+      background: "white",
       width: "500px",
       margin: "0 auto",
     },
@@ -98,7 +98,7 @@ function Posts() {
     },
     postAuthor: {
       fontSize: "14px",
-      color: "white",
+      color: "black",
     },
   };
 
