@@ -10,12 +10,14 @@ function Posts() {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
   const username = useSelector((state) => state.auth.user?.username);
   const posts = useSelector((state) => state.posts);
+  const userId = useSelector((state) => state.auth.user?.id);
 
   const handleAddPost = () => {
     const post = {
       title,
       content,
       username,
+      userId,
     };
     dispatch(addPost(post));
     setTitle("");

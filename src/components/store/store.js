@@ -5,6 +5,7 @@ import productDetailsReducer from "./productDetailsSlice";
 import authReducer from "./authSlice";
 import postsReducer from "./postsSlice";
 import usersReducer from "./usersSlice";
+import commentsReducer from "./commentsSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     auth: authReducer,
     posts: postsReducer,
     users: usersReducer,
+    comments: commentsReducer,
   },
 });
 

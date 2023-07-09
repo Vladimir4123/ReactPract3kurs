@@ -10,14 +10,43 @@ export const fetchUserPosts = createAsyncThunk(
   "users/fetchUserPosts",
   async (userId) => {
     const response = await fetch(`https://dummyjson.com/posts/user/${userId}`);
-    const data = await response.json();
-    return data;
+    const postData = await response.json();
+
+    const posts = Array.isArray(postData.posts)
+      ? postData.posts
+      : [postData.posts];
+
+    const comments = await Promise.all(
+      posts.map(async (post) => {
+        const commentsResponse = await fetch(
+          `https://dummyjson.com/comments/post/${post.id}`
+        );
+        const commentsData = await commentsResponse.json();
+
+        const commentsWithUser = await Promise.all(
+          commentsData.comments.map(async (comment) => {
+            const userResponse = await fetch(
+              `https://dummyjson.com/users/${comment.user.id}`
+            );
+            const userData = await userResponse.json();
+            return { ...comment, user: userData };
+          })
+        );
+
+        return commentsWithUser;
+      })
+    );
+
+    const flattenedComments = comments.flat();
+
+    return { posts, comments: flattenedComments };
   }
 );
 
 const initialState = {
   users: [],
   posts: [],
+  comments: [],
   loading: false,
   error: null,
 };
