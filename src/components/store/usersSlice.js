@@ -76,6 +76,7 @@ const usersSlice = createSlice({
       .addCase(fetchUserPosts.fulfilled, (state, action) => {
         state.loading = false;
         state.posts = action.payload.posts;
+        state.comments = action.payload.comments;
       })
       .addCase(fetchUserPosts.rejected, (state, action) => {
         state.loading = false;

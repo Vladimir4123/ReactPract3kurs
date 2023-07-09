@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
-const postsSlice = createSlice({
+export const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
@@ -15,7 +15,7 @@ const postsSlice = createSlice({
   },
 });
 
-export const { addPost, clearPosts } = postsSlice.actions;
+export const { addPost } = postsSlice.actions;
 
 export const addPostAsync = (post) => {
   return async (dispatch) => {

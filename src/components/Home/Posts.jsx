@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost } from "../store/postsSlice";
+import { addPostAsync } from "../store/postsSlice";
 import { Navigate } from "react-router-dom";
 
 function Posts() {
@@ -19,7 +19,7 @@ function Posts() {
       username,
       userId,
     };
-    dispatch(addPost(post));
+    dispatch(addPostAsync(post));
     setTitle("");
     setContent("");
   };
